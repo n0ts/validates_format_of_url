@@ -30,4 +30,4 @@ end
 ==== Configurations
 
 * :schemes - An array of allowed schemes to match against (default is [:http, :https])
- * :message - A custom error message (default is: "is invalid").
+* :message - A custom error message (default is: "is invalid").
