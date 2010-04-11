@@ -1,0 +1,33 @@
+validates_format_of_url plugin
+
+This plugin provides a validator for URL. 
+This plugin inspired from "Validating the format of an URL with Rails" (http://www.simonecarletti.com/blog/2009/04/validating-the-format-of-an-url-with-rails/).
+
+==== Installation
+
+Install RAIS_ROOT/vendor/plugins directory.
+
+
+==== Usage
+
+class Hoge < ActiveRecord:Base
+  validates_format_of_url :url
+end
+
+or
+
+class Hoge < ActiveRecord::Base
+  validate :check_url
+
+  def check_url
+    if validates_format_of_url(url) == false
+      errors.add(:url, 'URL is invalid.')
+    end
+  end
+end
+
+
+==== Configurations
+
+* :schemes - An array of allowed schemes to match against (default is [:http, :https])
+ * :message - A custom error message (default is: "is invalid").
